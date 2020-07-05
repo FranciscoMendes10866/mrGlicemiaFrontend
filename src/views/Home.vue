@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- Hero Section -->
-    <section class="py-48">
+    <section class="pt-24 pb-56">
       <div class="container mx-auto">
         <div class="flex">
           <div class="w-full">
