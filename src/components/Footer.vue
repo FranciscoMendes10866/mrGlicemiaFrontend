@@ -16,12 +16,12 @@
           >Francisco Mendes</a>
         </div>
         <div class="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
-          <h6 class="font-bold mb-2">Code source:</h6>
+          <h6 class="font-bold mb-2">Source code:</h6>
           <a
             href="https://github.com/FranciscoMendes10866/mrGlicemiaFrontend"
             target="blank"
             class="not-italic mb-4 text-sm text-indigo-700"
-          >Github repo</a>
+          >Github</a>
         </div>
         <div class="px-4 md:w-1/4 md:ml-auto mt-6 sm:mt-4 md:mt-0">
           <button
