@@ -36,10 +36,10 @@
         <div class="flex justify-start">
           <div class="w-full">
             <h1
-              class="text-white font-black text-left tracking-wide leading-snug md:leading-normal mt-8 md:mt-20 ml-5 md:ml-0 text-4xl md:text-6xl"
+              class="text-white font-black text-left tracking-wide leading-snug md:leading-normal mt-8 md:mt-20 ml-5 md:ml-0 xl:ml-16 text-4xl md:text-6xl"
             >What's Included?</h1>
             <p
-              class="text-ledt font-semi-bold text-sm md:text-lg text-white mt-8 leading-loose ml-5 md:ml-0"
+              class="text-ledt font-semi-bold text-sm md:text-lg text-white mt-8 leading-loose ml-5 md:ml-0 xl:ml-16"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />Vivamus venenatis mi eget diam elementum, non condimentum.
@@ -48,10 +48,16 @@
         </div>
       </div>
     </section>
+    <!-- Features Section -->
+    <Features />
   </div>
 </template>
 
 <script>
+
 export default {
+  components: {
+    Features: () => import('../components/Features')
+  }
 }
 </script>
