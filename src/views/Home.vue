@@ -6,14 +6,14 @@
         <div class="flex">
           <div class="w-full">
             <h1
-              class="text-4xl font-black md:text-6xl ml-5 md:ml-0 text-left md:text-center tracking-wide leading-normal animate__animated animate__fadeIn"
+              class="text-4xl font-black md:text-6xl ml-5 md:ml-0 text-left md:text-center tracking-wide leading-snug md:leading-normal animate__animated animate__fadeIn"
             >
               The Application for
               <br />
               <span class="text-indigo-700">Diabetic</span> people.
             </h1>
             <p
-              class="text-left ml-5 md:ml-0 md:text-center font-semi-bold text-base md:text-lg text-gray-600 mt-8 leading-loose animate__animated animate__fadeIn"
+              class="leading-loose text-left ml-5 md:ml-0 md:text-center font-semi-bold text-sm md:text-lg text-gray-600 mt-8 animate__animated animate__fadeIn"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />Vivamus venenatis mi eget diam elementum, non condimentum.
@@ -36,10 +36,10 @@
         <div class="flex justify-start">
           <div class="w-full">
             <h1
-              class="text-white font-black text-left tracking-wide leading-normal mt-8 md:mt-20 ml-5 md:ml-0 text-4xl md:text-6xl"
+              class="text-white font-black text-left tracking-wide leading-snug md:leading-normal mt-8 md:mt-20 ml-5 md:ml-0 text-4xl md:text-6xl"
             >What's Included?</h1>
             <p
-              class="text-ledt font-semi-bold text-base md:text-lg text-white mt-8 leading-loose ml-5 md:ml-0"
+              class="text-ledt font-semi-bold text-sm md:text-lg text-white mt-8 leading-loose ml-5 md:ml-0"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />Vivamus venenatis mi eget diam elementum, non condimentum.
