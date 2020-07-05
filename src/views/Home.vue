@@ -5,12 +5,16 @@
       <div class="container mx-auto">
         <div class="flex">
           <div class="w-full">
-            <h1 class="font-black text-6xl text-center tracking-wide leading-normal">
+            <h1
+              class="font-black text-6xl text-center tracking-wide leading-normal animate__animated animate__fadeIn"
+            >
               The Application for
               <br />
               <span class="text-indigo-700">Diabetic</span> people.
             </h1>
-            <p class="text-center font-semi-bold text-lg text-gray-600 mt-8 leading-loose">
+            <p
+              class="text-center font-semi-bold text-lg text-gray-600 mt-8 leading-loose animate__animated animate__fadeIn"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />Vivamus venenatis mi eget diam elementum, non condimentum.
             </p>
@@ -24,7 +28,7 @@
         <div class="grid grid-col-1"></div>
         <div class="flex justify-center">
           <img
-            class="-mt-56"
+            class="-mt-56 animate__animated animate__fadeInUp"
             src="https://res.cloudinary.com/dj5iihhqv/image/upload/v1593900528/glicemiaLandingPage/image_bkwduh.png"
             alt
           />
