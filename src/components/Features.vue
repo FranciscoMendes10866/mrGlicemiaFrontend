@@ -17,22 +17,22 @@
         <div class="flex flex-wrap justify-center mb-10">
           <button
             @click.prevent="selectTab(1)"
-            :class="{ 'bg-purple-800 text-white': currentTab == 1 }"
+            :class="{ 'bg-indigo-700 text-white': currentTab == 1 }"
             class="py-4 px-4 font-bold tracking-wide rounded hover:shadow-lg"
           >Mobile</button>
           <button
             @click.prevent="selectTab(2)"
-            :class="{ 'bg-purple-800 text-white': currentTab == 2 }"
+            :class="{ 'bg-indigo-700 text-white': currentTab == 2 }"
             class="py-4 px-4 font-bold tracking-wide rounded hover:shadow-lg ml-4"
           >Secure</button>
           <button
             @click.prevent="selectTab(3)"
-            :class="{ 'bg-purple-800 text-white': currentTab == 3 }"
+            :class="{ 'bg-indigo-700 text-white': currentTab == 3 }"
             class="py-4 px-4 font-bold tracking-wide rounded hover:shadow-lg ml-4"
           >Data</button>
           <button
             @click.prevent="selectTab(4)"
-            :class="{ 'bg-purple-800 text-white': currentTab == 4 }"
+            :class="{ 'bg-indigo-700 text-white': currentTab == 4 }"
             class="py-4 px-4 font-bold tracking-wide rounded hover:shadow-lg ml-4"
           >More</button>
         </div>
@@ -67,6 +67,50 @@
           <div
             class="max-w-sm rounded shadow-md md:shadow lg:shadow-md xl:shadow-lg mt-8 md:mt-6 lg:mt-6 xl:mt-0 lg:ml-8 animate__animated animate__bounceInUp"
             v-for="item in secure"
+            :key="item.id"
+          >
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">
+                <i :class="item.icon">
+                  <span class="font-black text-black text-3xl tracking-wide">&nbsp;{{ item.title }}</span>
+                </i>
+              </div>
+              <p
+                class="text-gray-700 text-base mt-4 leading-loose tracking-wide mb-4"
+              >{{ item.content }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card Data -->
+        <div
+          v-if="currentTab == 3"
+          class="flex flex-wrap justify-around md:justify-start lg:justify-start xl:justify-evenly"
+        >
+          <div
+            class="max-w-sm rounded shadow-md md:shadow lg:shadow-md xl:shadow-lg mt-8 md:mt-6 lg:mt-6 xl:mt-0 lg:ml-8 animate__animated animate__bounceInUp"
+            v-for="item in data"
+            :key="item.id"
+          >
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">
+                <i :class="item.icon">
+                  <span class="font-black text-black text-3xl tracking-wide">&nbsp;{{ item.title }}</span>
+                </i>
+              </div>
+              <p
+                class="text-gray-700 text-base mt-4 leading-loose tracking-wide mb-4"
+              >{{ item.content }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card More -->
+        <div
+          v-if="currentTab == 4"
+          class="flex flex-wrap justify-around md:justify-start lg:justify-start xl:justify-evenly"
+        >
+          <div
+            class="max-w-sm rounded shadow-md md:shadow lg:shadow-md xl:shadow-lg mt-8 md:mt-6 lg:mt-6 xl:mt-0 lg:ml-8 animate__animated animate__bounceInUp"
+            v-for="item in more"
             :key="item.id"
           >
             <div class="px-6 py-4">
@@ -122,6 +166,34 @@ export default {
           id: 2,
           icon: 'bx bx-wifi-off text-3xl text-indigo-700',
           title: 'asdadada',
+          content: 'You can access all your content that was already viewed by you without having any internet connection.'
+        }
+      ],
+      data: [
+        {
+          id: 1,
+          icon: 'bx bx-mobile-alt text-3xl text-indigo-700',
+          title: 'tuy',
+          content: 'You can have access to the platform in any device. You can use your browser or you can install the app in your system.'
+        },
+        {
+          id: 2,
+          icon: 'bx bx-wifi-off text-3xl text-indigo-700',
+          title: 'iop',
+          content: 'You can access all your content that was already viewed by you without having any internet connection.'
+        }
+      ],
+      more: [
+        {
+          id: 1,
+          icon: 'bx bx-mobile-alt text-3xl text-indigo-700',
+          title: 'zcx',
+          content: 'You can have access to the platform in any device. You can use your browser or you can install the app in your system.'
+        },
+        {
+          id: 2,
+          icon: 'bx bx-wifi-off text-3xl text-indigo-700',
+          title: 'nbv',
           content: 'You can access all your content that was already viewed by you without having any internet connection.'
         }
       ]
