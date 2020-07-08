@@ -19,28 +19,44 @@
               <router-link
                 to="/"
                 class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-700"
-              >Product</router-link>
+              >Home</router-link>
             </li>
             <li>
               <router-link
-                to="/"
+                to="/dashboard"
                 class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-700"
-              >Features</router-link>
+              >Dashboard</router-link>
             </li>
             <li>
               <router-link
-                to="/"
+                to="/profile"
                 class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-700"
-              >Project</router-link>
+              >Profile</router-link>
             </li>
             <li>
-              <button
-                to="/"
+              <router-link
+                to="/register"
                 class="px-5 py-3 shadow-md lg:ml-5 block bg-white hover:bg-gray-100 text-indigo-700 font-bold rounded"
-              >Get started</button>
+              >Get started</router-link>
             </li>
           </ul>
         </nav>
+        <router-link
+          to="/profile"
+          class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor text-gray-600"
+        >
+          <p>Francisco Mendes</p>
+        </router-link>
+        <router-link
+          to="/profile"
+          class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor"
+        >
+          <img
+            class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
+            src="https://res.cloudinary.com/dj5iihhqv/image/upload/v1593786122/glicemiaPics/rtuho4lmn4vhdqjh4uno.jpg"
+            alt="Profile Picture"
+          />
+        </router-link>
       </div>
     </header>
   </div>

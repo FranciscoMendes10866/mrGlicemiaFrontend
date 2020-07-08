@@ -24,10 +24,12 @@
           >Github</a>
         </div>
         <div class="px-4 md:w-1/4 md:ml-auto mt-6 sm:mt-4 md:mt-0">
-          <button
-            to="/"
-            class="px-5 py-3 shadow-md lg:ml-5 block bg-white hover:bg-gray-100 text-indigo-700 font-bold rounded"
-          >Getting Started</button>
+          <h6 class="font-bold mb-2">License:</h6>
+          <a
+            href="https://choosealicense.com/licenses/mit/"
+            target="blank"
+            class="not-italic mb-4 text-sm text-indigo-700"
+          >MIT</a>
         </div>
       </div>
     </div>

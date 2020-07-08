@@ -48,13 +48,15 @@
             :key="item.id"
           >
             <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">
+              <div class="font-bold text-sm md:text-xl mb-2">
                 <i :class="item.icon">
-                  <span class="font-black text-black text-3xl tracking-wide">&nbsp;{{ item.title }}</span>
+                  <span
+                    class="font-black text-black text-2xl md:text-3xl tracking-wide"
+                  >&nbsp;{{ item.title }}</span>
                 </i>
               </div>
               <p
-                class="text-gray-700 text-base mt-4 leading-loose tracking-wide mb-4"
+                class="text-gray-700 text-sm md:text-base mt-4 leading-loose tracking-wide mb-4"
               >{{ item.content }}</p>
             </div>
           </div>
@@ -70,13 +72,15 @@
             :key="item.id"
           >
             <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">
+              <div class="font-bold text-sm md:text-xl mb-2">
                 <i :class="item.icon">
-                  <span class="font-black text-black text-3xl tracking-wide">&nbsp;{{ item.title }}</span>
+                  <span
+                    class="font-black text-black text-2xl md:text-3xl tracking-wide"
+                  >&nbsp;{{ item.title }}</span>
                 </i>
               </div>
               <p
-                class="text-gray-700 text-base mt-4 leading-loose tracking-wide mb-4"
+                class="text-gray-700 text-sm md:text-base mt-4 leading-loose tracking-wide mb-4"
               >{{ item.content }}</p>
             </div>
           </div>
@@ -92,13 +96,15 @@
             :key="item.id"
           >
             <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">
+              <div class="font-bold text-sm md:text-xl mb-2">
                 <i :class="item.icon">
-                  <span class="font-black text-black text-3xl tracking-wide">&nbsp;{{ item.title }}</span>
+                  <span
+                    class="font-black text-black text-2xl md:text-3xl tracking-wide"
+                  >&nbsp;{{ item.title }}</span>
                 </i>
               </div>
               <p
-                class="text-gray-700 text-base mt-4 leading-loose tracking-wide mb-4"
+                class="text-gray-700 text-sm md:text-base mt-4 leading-loose tracking-wide mb-4"
               >{{ item.content }}</p>
             </div>
           </div>
@@ -114,13 +120,15 @@
             :key="item.id"
           >
             <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">
+              <div class="font-bold text-sm md:text-xl mb-2">
                 <i :class="item.icon">
-                  <span class="font-black text-black text-3xl tracking-wide">&nbsp;{{ item.title }}</span>
+                  <span
+                    class="font-black text-black text-2xl md:text-3xl tracking-wide"
+                  >&nbsp;{{ item.title }}</span>
                 </i>
               </div>
               <p
-                class="text-gray-700 text-base mt-4 leading-loose tracking-wide mb-4"
+                class="text-gray-700 text-sm md:text-base mt-4 leading-loose tracking-wide mb-4"
               >{{ item.content }}</p>
             </div>
           </div>
@@ -158,43 +166,43 @@ export default {
       secure: [
         {
           id: 1,
-          icon: 'bx bx-mobile-alt text-3xl text-indigo-700',
-          title: 'Asdads',
-          content: 'You can have access to the platform in any device. You can use your browser or you can install the app in your system.'
+          icon: 'bx bx-check-shield text-3xl text-indigo-700',
+          title: 'Authentication',
+          content: 'The auth strategy used makes it safer and simples for you to create and login into an account.'
         },
         {
           id: 2,
-          icon: 'bx bx-wifi-off text-3xl text-indigo-700',
-          title: 'asdadada',
-          content: 'You can access all your content that was already viewed by you without having any internet connection.'
+          icon: 'bx bx-shield-quarter text-3xl text-indigo-700',
+          title: 'Authorization',
+          content: 'The backend is always validating if you have the access and the permission to a certain functionality.'
         }
       ],
       data: [
         {
           id: 1,
-          icon: 'bx bx-mobile-alt text-3xl text-indigo-700',
-          title: 'tuy',
-          content: 'You can have access to the platform in any device. You can use your browser or you can install the app in your system.'
+          icon: 'bx bx-meteor text-3xl text-indigo-700',
+          title: 'Rest API',
+          content: 'The API was built in Node.js with TypeScript, making all the code more consistent.'
         },
         {
           id: 2,
-          icon: 'bx bx-wifi-off text-3xl text-indigo-700',
-          title: 'iop',
-          content: 'You can access all your content that was already viewed by you without having any internet connection.'
+          icon: 'bx bx-data text-3xl text-indigo-700',
+          title: 'Postgres',
+          content: 'The database toolkit used was Prisma and the database dialect chosen was Postgres.'
         }
       ],
       more: [
         {
           id: 1,
-          icon: 'bx bx-mobile-alt text-3xl text-indigo-700',
-          title: 'zcx',
-          content: 'You can have access to the platform in any device. You can use your browser or you can install the app in your system.'
+          icon: 'bx bx-vial text-3xl text-indigo-700',
+          title: 'Vuex',
+          content: 'To have maximum control of the data present in the frontend, it was necessary to use a state manager such as Vuex.'
         },
         {
           id: 2,
-          icon: 'bx bx-wifi-off text-3xl text-indigo-700',
-          title: 'nbv',
-          content: 'You can access all your content that was already viewed by you without having any internet connection.'
+          icon: 'bx bx-diamond text-3xl text-indigo-700',
+          title: 'Tailwind',
+          content: 'To make all the styling as close as it should be from the UI Design, Tailwind was the best choice for being so esasy and intuitive.'
         }
       ]
     }
@@ -206,6 +214,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>
