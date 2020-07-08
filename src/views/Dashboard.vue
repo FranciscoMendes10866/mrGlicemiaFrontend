@@ -1,5 +1,19 @@
 <template>
   <div>
+    <!-- Alert Section -->
+    <section>
+      <div class="container mx-auto">
+        <div class="flex flex-col justify-center align-middle items-center">
+          <!-- Alert Component -->
+          <Alert
+            class="animate__animated animate__bounceInDown"
+            @closeAlert="alert = false"
+            v-show="alert === true"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Table Section -->
     <section>
       <div class="container mx-auto">
         <div class="flex flex-col justify-center align-middle items-center py-48">
@@ -7,65 +21,54 @@
             <div
               class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
             >
-              <table class="min-w-full">
-                <thead>
-                  <tr>
-                    <th
-                      class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                    >Glucose</th>
-                    <th
-                      class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                    >Insulin</th>
-                    <th
-                      class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                    >Date</th>
-                    <th
-                      class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                    >Medication</th>
-                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white">
-                  <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                      <div class="flex items-center">
-                        <div class="ml-4">
-                          <div class="text-sm leading-5 font-medium text-gray-900">120</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                      <div class="text-sm leading-5 text-gray-900">1</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                      <div class="text-sm leading-5 text-gray-900">20-04-2020</div>
-                    </td>
-                    <td
-                      class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
-                    >
-                      <div class="text-sm leading-5 text-gray-900">True</div>
-                    </td>
-                    <td
-                      class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
-                    >
-                      <a href="#" class="text-yellow-600 hover:text-yellow-900">Edit</a>
-                    </td>
-                    <td
-                      class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
-                    >
-                      <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <button
+                @click="openModal"
+                class="mb-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded"
+              >
+                <i class="bx bx-list-plus text-2xl text-indigo-700 align-middle"></i>&nbsp;
+                <span class="text-sm">Add</span>
+              </button>
+              <!-- Table Component -->
+              <Table />
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Modal Component -->
+    <Modal
+      class="animate__animated animate__bounceIn"
+      @closed="closeModal"
+      @send="createRecord"
+      v-show="modal === true"
+    />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => {
+    return {
+      modal: false,
+      alert: false
+    }
+  },
+  methods: {
+    openModal () {
+      this.modal = true
+    },
+    closeModal () {
+      this.modal = false
+    },
+    createRecord () {
+      this.alert = true
+      this.modal = false
+    }
+  },
+  components: {
+    Modal: () => import('../components/Modal'),
+    Alert: () => import('../components/Alert'),
+    Table: () => import('../components/Table')
+  }
+}
 </script>
