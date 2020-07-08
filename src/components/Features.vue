@@ -180,21 +180,27 @@ export default {
       data: [
         {
           id: 1,
-          icon: 'bx bx-meteor text-3xl text-indigo-700',
+          icon: 'bx bx-server text-3xl text-indigo-700',
           title: 'Rest API',
-          content: 'The API was built in Node.js with TypeScript, making all the code more consistent.'
+          content: 'The API was built in Node.js with TypeScript, making all the code more consistent and it was deployed on Heroku.'
         },
         {
           id: 2,
           icon: 'bx bx-data text-3xl text-indigo-700',
           title: 'Postgres',
           content: 'The database toolkit used was Prisma and the database dialect chosen was Postgres.'
+        },
+        {
+          id: 3,
+          icon: 'bx bx-pyramid text-3xl text-indigo-700',
+          title: 'Prisma',
+          content: 'A database toolkit that replaces tradicional ORM\'s, making easy the access to the database.'
         }
       ],
       more: [
         {
           id: 1,
-          icon: 'bx bx-vial text-3xl text-indigo-700',
+          icon: 'bx bx-cuboid text-3xl text-indigo-700',
           title: 'Vuex',
           content: 'To have maximum control of the data present in the frontend, it was necessary to use a state manager such as Vuex.'
         },
@@ -203,6 +209,12 @@ export default {
           icon: 'bx bx-diamond text-3xl text-indigo-700',
           title: 'Tailwind',
           content: 'To make all the styling as close as it should be from the UI Design, Tailwind was the best choice for being so esasy and intuitive.'
+        },
+        {
+          id: 3,
+          icon: 'bx bx-sticker text-3xl text-indigo-700',
+          title: 'Animate.css',
+          content: 'To make the UX better, it was used an animation library to make the job easier in this field.'
         }
       ]
     }
