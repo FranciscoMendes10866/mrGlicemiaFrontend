@@ -8,16 +8,53 @@
           >Create an account.</h2>
         </div>
         <!-- Register Form Component -->
-        <RegisterForm />
+        <AuthForm
+          email="Email address"
+          :emailValue="registerEmail"
+          @emailInput="setRegisterEmail"
+          password="Password"
+          :passwordValue="registerPassword"
+          @passwordInput="setRegisterPassword"
+          @submitForm="createAccount"
+          :myProps="myProps"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations, mapActions } from 'vuex'
+
 export default {
+  data () {
+    return {
+      myProps: {
+        button: 'Register',
+        callToAction: 'If you already have an account. Then ',
+        link: 'login',
+        url: '/login'
+      }
+    }
+  },
   components: {
-    RegisterForm: () => import('../components/RegisterForm')
+    AuthForm: () => import('../components/AuthForm')
+  },
+  methods: {
+    ...mapMutations('auth', [
+      'setRegisterEmail',
+      'setRegisterPassword',
+      'setRegisterError'
+    ]),
+    ...mapActions('auth', [
+      'createAccount'
+    ])
+  },
+  computed: {
+    ...mapState('auth', [
+      'registerEmail',
+      'registerPassword'
+    ])
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="mt-8" action="#" method="POST">
+    <form class="mt-8" method="POST" @submit.prevent="$emit('submitForm')">
       <input type="hidden" name="remember" value="true" />
       <div class="rounded-md shadow-sm">
         <div>
@@ -8,26 +8,29 @@
             aria-label="Email address"
             name="email"
             type="email"
+            :value="emailValue"
+            @input="$emit('emailInput', $event.target.value)"
             required
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-            placeholder="Email address"
+            :placeholder="email"
           />
         </div>
         <div class="-mt-px">
           <input
             aria-label="Password"
             name="password"
+            :value="passwordValue"
+            @input="$emit('passwordInput', $event.target.value)"
             type="password"
             required
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-            placeholder="Password"
+            :placeholder="password"
           />
         </div>
       </div>
 
       <div class="mt-6">
         <button
-          type="submit"
           class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
         >
           <span class="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -43,21 +46,29 @@
               />
             </svg>
           </span>
-          Register
+          {{ myProps.button }}
         </button>
       </div>
 
       <p class="mt-3 text-center text-sm leading-5 text-gray-600">
-        Do you have an existing account? Then
+        {{ myProps.callToAction }}
         <router-link
-          to="/login"
+          :to="myProps.url"
           class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-        >login</router-link>.
+        >{{ myProps.link }}</router-link>.
       </p>
     </form>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: [
+    'email',
+    'password',
+    'emailValue',
+    'passwordValue',
+    'myProps'
+  ]
+}
 </script>
