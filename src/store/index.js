@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 
 import auth from './modules/auth'
 import records from './modules/records'
+import profile from './modules/profile'
 
 Vue.use(Vuex)
 
@@ -15,7 +16,8 @@ export default new Vuex.Store({
   },
   modules: {
     auth,
-    records
+    records,
+    profile
   },
   plugins: [
     createPersistedState()

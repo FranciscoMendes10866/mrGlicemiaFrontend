@@ -23,13 +23,8 @@
           >Delete</th>
         </tr>
       </thead>
-      <tbody class="bg-white">
-        <tr v-if="recordsList === undefined || recordsList.length == 0">
-          <h1
-            class="ml-4 py-2 text-sm leading-5 font-medium text-gray-700"
-          >It's empty. Start by adding new data to the platform.</h1>
-        </tr>
-        <tr v-else v-for="record in recordsList" :key="record.key">
+      <tbody class="bg-white" v-if="recordsList !== undefined || recordsList.length !== 0">
+        <tr v-for="record in recordsList" :key="record.key">
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
             <div class="flex items-center">
               <div class="ml-4">
@@ -75,6 +70,13 @@
         </tr>
       </tbody>
     </table>
+    <h1
+      v-if="recordsList === undefined || recordsList.length == 0"
+      class="ml-4 py-6 text-center text-sm leading-5 font-medium text-gray-600"
+    >
+      <span class="text-red-500 font-semibold">It's empty.</span> Start by
+      <strong>adding new data</strong> to the platform.
+    </h1>
   </div>
 </template>
 

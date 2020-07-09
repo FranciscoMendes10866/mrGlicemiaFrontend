@@ -43,7 +43,8 @@
           to="/profile"
           class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor text-gray-600"
         >
-          <p>Francisco Mendes</p>
+          <p v-if="profileData == null || profileData.firstName == null"></p>
+          <p v-else>{{ profileData.firstName }}</p>
         </router-link>
         <router-link
           v-show="isLoggedIn"
@@ -51,19 +52,15 @@
           class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor"
         >
           <img
-            class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
-            src="https://res.cloudinary.com/dj5iihhqv/image/upload/v1593786122/glicemiaPics/rtuho4lmn4vhdqjh4uno.jpg"
-            alt="Profile Picture"
-          />
-        </router-link>
-        <router-link
-          v-show="isLoggedIn"
-          to="/profile"
-          class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor"
-        >
-          <img
+            v-if="profileData == null || profileData.picture == null"
             class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
             src="https://res.cloudinary.com/dj5iihhqv/image/upload/v1594324308/glicemiaLandingPage/Profile_avatar_placeholder_large_k574jc.png"
+            alt="Profile Picture"
+          />
+          <img
+            v-else
+            class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
+            :src="profileData.picture"
             alt="Profile Picture"
           />
         </router-link>
@@ -78,17 +75,26 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions, mapState } from 'vuex'
 
 export default {
+  mounted () {
+    this.fetchProfileData()
+  },
   computed: {
     ...mapGetters('auth', [
       'isLoggedIn'
+    ]),
+    ...mapState('profile', [
+      'profileData'
     ])
   },
   methods: {
     ...mapActions('auth', [
       'logoutAccount'
+    ]),
+    ...mapActions('profile', [
+      'fetchProfileData'
     ])
   }
 }

@@ -9,19 +9,27 @@
         <dl>
           <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm leading-5 font-medium text-gray-500">Full name</dt>
-            <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">Francisco Mendes</dd>
+            <dd
+              class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+            >{{ profileData.firstName }}&nbsp;{{ profileData.lastName }}</dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm leading-5 font-medium text-gray-500">Country</dt>
-            <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">Portugal</dd>
+            <dd
+              class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+            >{{ profileData.country }}</dd>
           </div>
           <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm leading-5 font-medium text-gray-500">City</dt>
-            <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">Coimbra</dd>
+            <dd
+              class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+            >{{ profileData.city }}</dd>
           </div>
           <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm leading-5 font-medium text-gray-500">Age</dt>
-            <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">23 years old</dd>
+            <dd
+              class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+            >{{ profileData.age }} years old</dd>
           </div>
           <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm leading-5 font-medium text-gray-500">Picture</dt>
@@ -36,5 +44,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: [
+    'profileData'
+  ]
+}
 </script>
