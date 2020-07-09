@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import auth from './modules/auth'
+import records from './modules/records'
 
 Vue.use(Vuex)
 
@@ -13,7 +14,8 @@ export default new Vuex.Store({
     baseURL: 'http://localhost:3333/api/v1'
   },
   modules: {
-    auth
+    auth,
+    records
   },
   plugins: [
     createPersistedState()

@@ -24,26 +24,36 @@
         </tr>
       </thead>
       <tbody class="bg-white">
-        <tr>
+        <tr v-if="recordsList === undefined || recordsList.length == 0">
+          <h1
+            class="ml-4 py-2 text-sm leading-5 font-medium text-gray-700"
+          >It's empty. Start by adding new data to the platform.</h1>
+        </tr>
+        <tr v-else v-for="record in recordsList" :key="record.key">
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
             <div class="flex items-center">
               <div class="ml-4">
-                <div class="text-sm leading-5 font-medium text-gray-900">120</div>
+                <div class="text-sm leading-5 font-medium text-gray-900">{{ record.glucose }}</div>
               </div>
             </div>
           </td>
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-            <div class="text-sm leading-5 text-gray-900 text-center">1</div>
+            <div class="text-sm leading-5 text-gray-900 text-center">{{ record.insulin }}</div>
           </td>
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-            <div class="text-sm leading-5 text-gray-900">20-04-2020</div>
+            <div class="text-sm leading-5 text-gray-900">{{ record.dateTime }}</div>
           </td>
           <td
             class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
           >
             <span
+              v-if="record.medication == true"
               class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-            >Yes</span>
+            >Took</span>
+            <span
+              v-else
+              class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
+            >Didn't take</span>
           </td>
           <td
             class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
@@ -55,9 +65,12 @@
           <td
             class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
           >
-            <a href="#" class="text-red-600 hover:text-red-900">
+            <button
+              @click="deleteRecord(record)"
+              class="bg-transparent hover:bg-transparent text-red-600 hover:text-red-900"
+            >
               <i class="bx bx-trash text-xl" />
-            </a>
+            </button>
           </td>
         </tr>
       </tbody>
@@ -66,5 +79,26 @@
 </template>
 
 <script>
-export default {}
+import { mapMutations, mapState, mapActions } from 'vuex'
+
+export default {
+  mounted () {
+    this.fetchRecords()
+  },
+  methods: {
+    ...mapMutations('records', [
+      'setFetchRecords',
+      'setDeleteRecord'
+    ]),
+    ...mapActions('records', [
+      'fetchRecords',
+      'deleteRecord'
+    ])
+  },
+  computed: {
+    ...mapState('records', [
+      'recordsList'
+    ])
+  }
+}
 </script>
