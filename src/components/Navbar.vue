@@ -56,6 +56,17 @@
             alt="Profile Picture"
           />
         </router-link>
+        <router-link
+          v-show="isLoggedIn"
+          to="/profile"
+          class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor"
+        >
+          <img
+            class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
+            src="https://res.cloudinary.com/dj5iihhqv/image/upload/v1594324308/glicemiaLandingPage/Profile_avatar_placeholder_large_k574jc.png"
+            alt="Profile Picture"
+          />
+        </router-link>
         <button
           class="px-5 py-3 shadow-md lg:ml-5 block bg-white hover:bg-gray-100 text-indigo-700 font-bold rounded"
           v-show="isLoggedIn"

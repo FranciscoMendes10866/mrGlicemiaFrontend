@@ -1,9 +1,27 @@
 <template>
   <div>
-    <h1 class="text-center">Profile</h1>
+    <section class="py-20">
+      <div class="container mx-auto">
+        <div class="flex justify-center">
+          <Form />
+        </div>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="container mx-auto">
+        <div class="flex justify-center">
+          <Data />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  components: {
+    Form: () => import('../components/ProfileForm'),
+    Data: () => import('../components/ProfileData')
+  }
+}
 </script>

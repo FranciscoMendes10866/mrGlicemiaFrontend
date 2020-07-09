@@ -50,6 +50,35 @@
     </section>
     <!-- Features Section -->
     <Features />
+    <section class="bg-gray-50 py-20">
+      <div class="container mx-auto">
+        <div
+          class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
+        >
+          <h2
+            class="text-3xl font-black md:text-4xl ml-5 md:ml-0 text-left md:text-left tracking-wide leading-snug md:leading-normal"
+          >
+            Ready to try it?
+            <br />
+            <span class="text-indigo-700">Start for free now.</span>
+          </h2>
+          <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+            <div class="inline-flex rounded-md shadow">
+              <router-link
+                to="/register"
+                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+              >Get started</router-link>
+            </div>
+            <div class="ml-3 inline-flex rounded-md shadow">
+              <router-link
+                to="/register"
+                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+              >Learn more</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 

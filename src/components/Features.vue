@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="bg-gray-100 py-20">
+    <section class="bg-gray-50 py-20">
       <div class="container mx-auto">
         <!-- Head -->
         <div class="flex flex-auto">
