@@ -1,5 +1,4 @@
 import API from '../../server/Api'
-import router from '../../router/index'
 
 export default {
   namespaced: true,
@@ -40,7 +39,9 @@ export default {
           commit('setPicture', '')
           commit('setCity', null)
           commit('setAge', null)
-          router.push('/dashboard')
+        })
+        .then(() => {
+          window.location.reload()
         })
         .catch((error) => console.log(error))
     }
