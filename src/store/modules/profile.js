@@ -12,7 +12,7 @@ export default {
     country: null,
     city: null,
     age: null,
-    picture: null
+    picture: ''
   },
   actions: {
     fetchProfileData ({ commit }) {
@@ -37,11 +37,12 @@ export default {
           commit('setFirstName', null)
           commit('setLastName', null)
           commit('setCountry', null)
-          commit('setPicture', null)
+          commit('setPicture', '')
           commit('setCity', null)
           commit('setAge', null)
           router.push('/dashboard')
         })
+        .catch((error) => console.log(error))
     }
   },
   getters: {},

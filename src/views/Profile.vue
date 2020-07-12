@@ -3,7 +3,22 @@
     <section class="py-20">
       <div class="container mx-auto">
         <div class="flex justify-center">
-          <Form v-if="profileData == null" />
+          <Form
+            v-if="profileData == null"
+            :firstNameValue="firstName"
+            :lastNameValue="lastName"
+            :countryValue="country"
+            :cityValue="city"
+            :ageValue="age"
+            :pictureValue="picture"
+            @firstNameInput="setFirstName"
+            @lastNameInput="setLastName"
+            @countryInput="setCountry"
+            @cityInput="setCity"
+            @ageInput="setAge"
+            @pictureInput="setPicture"
+            @submitForm="createProfile"
+          />
           <Data v-else :profileData="profileData" />
         </div>
       </div>
@@ -20,15 +35,28 @@ export default {
   },
   methods: {
     ...mapMutations('profile', [
-      'setFetchData'
+      'setFetchData',
+      'setFirstName',
+      'setLastName',
+      'setCountry',
+      'setCity',
+      'setAge',
+      'setPicture'
     ]),
     ...mapActions('profile', [
-      'fetchProfileData'
+      'fetchProfileData',
+      'createProfile'
     ])
   },
   computed: {
     ...mapState('profile', [
-      'profileData'
+      'profileData',
+      'firstName',
+      'lastName',
+      'country',
+      'city',
+      'age',
+      'picture'
     ])
   },
   components: {
